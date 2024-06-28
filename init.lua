@@ -557,6 +557,11 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        tsserver = {
+          -- on_attach = on_attach,
+          filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+          cmd = { 'typescript-language-server', '--stdio' },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -820,7 +825,25 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'python', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'python',
+        'vim',
+        'vimdoc',
+        'tsx',
+        'css',
+        'html',
+        'scss',
+        'json',
+        'typescript',
+        'javascript',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
