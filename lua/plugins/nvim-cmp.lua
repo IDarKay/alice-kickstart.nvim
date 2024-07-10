@@ -14,6 +14,10 @@ return { -- Autocompletion
         end
         return 'make install_jsregexp'
       end)(),
+      config = function()
+        local snippets_path = vim.fn.stdpath 'config' .. '/lua/snippets'
+        require('luasnip.loaders.from_lua').lazy_load { paths = { snippets_path } }
+      end,
       dependencies = {
         -- `friendly-snippets` contains a variety of premade snippets.
         --    See the README about individual language/framework/plugin snippets:
