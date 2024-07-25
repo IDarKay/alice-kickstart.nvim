@@ -385,6 +385,15 @@ require('lazy').setup({
         jsonls = {},
         eslint = {},
         cssls = {},
+        intelephense = {
+          settings = {
+            intelephense = {
+              format = {
+                braces = 'k&r',
+              },
+            },
+          },
+        },
         tsserver = {
           -- on_attach = on_attach,
           filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },

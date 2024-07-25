@@ -37,6 +37,7 @@ return { -- Autocompletion
     --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'pontusk/cmp-sass-variables',
   },
   config = function()
     -- See `:help cmp`
@@ -107,6 +108,7 @@ return { -- Autocompletion
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'sass-variables' },
         { name = 'path' },
       }, {
         { name = 'buffer' },

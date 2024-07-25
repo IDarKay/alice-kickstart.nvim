@@ -29,3 +29,5 @@ map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]ui
 
 map('n', '<leader>bn', '<cmd>bnext<CR>', { desc = 'Swap to [B]uffer [N]ext' })
 map('n', '<leader>bp', '<cmd>bprevious<CR>', { desc = 'Swap to [B]uffer [P]revious' })
+map('n', ';;', 'A;<Esc>', { desc = 'Add ; to end of line' })
+map('v', ';;', '<cmd>norm A;<CR>', { desc = 'Add ; to end of all selected lines' })
