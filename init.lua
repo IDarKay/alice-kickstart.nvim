@@ -394,9 +394,9 @@ require('lazy').setup({
             },
           },
         },
-        tsserver = {
+        ts_ls = {
           -- on_attach = on_attach,
-          filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+          filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript', 'javascriptreact', 'javascript.js' },
           cmd = { 'typescript-language-server', '--stdio' },
         },
         lua_ls = {
