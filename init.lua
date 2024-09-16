@@ -112,6 +112,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tikhomirov/vim-glsl',
 
   { 'numToStr/Comment.nvim', opts = {} },
 
