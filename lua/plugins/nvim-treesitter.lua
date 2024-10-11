@@ -44,6 +44,7 @@ return { -- Highlight, edit, and navigate code
       'json',
       'typescript',
       'javascript',
+      'latex',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
