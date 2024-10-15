@@ -7,5 +7,6 @@ return {
     vim.g.vimtex_view_method = 'zathura'
     vim.g.vimtex_compiler_method = 'latexmk' -- Use latexmk for compilation
     vim.g.vimtex_syntax_enabled = 1 -- Ensure syntax highlighting is enabled
+    vim.g.vimtex_complete_enabled = 1
   end,
 }

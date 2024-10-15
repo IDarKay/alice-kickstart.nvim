@@ -386,6 +386,14 @@ require('lazy').setup({
         jsonls = {},
         eslint = {},
         cssls = {},
+        ltex = {
+          filetypes = { 'tex', 'bib', 'markdown' },
+          settings = {
+            ltex = {
+              language = 'fr',
+            },
+          },
+        },
         intelephense = {
           settings = {
             intelephense = {

@@ -31,6 +31,7 @@ return { -- Autocompletion
       },
     },
     'saadparwaiz1/cmp_luasnip',
+    'kdheepak/cmp-latex-symbols',
 
     -- Adds other completion capabilities.
     --  nvim-cmp does not ship with all sources by default. They are split
@@ -114,5 +115,13 @@ return { -- Autocompletion
         { name = 'buffer' },
       }),
     }
+    cmp.setup.filetype('tex', {
+      sources = {
+        { name = 'vimtext' },
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'path' },
+      },
+    })
   end,
 }
