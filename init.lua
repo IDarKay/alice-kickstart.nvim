@@ -408,6 +408,11 @@ require('lazy').setup({
           filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript', 'javascriptreact', 'javascript.js' },
           cmd = { 'typescript-language-server', '--stdio' },
         },
+        yamlls = {
+          settings = {
+            yaml = {},
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
