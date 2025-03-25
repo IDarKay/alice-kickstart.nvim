@@ -14,20 +14,26 @@ local M = {
     Accept = 'application/vnd.github+json',
     ['X-GitHub-Api-Version'] = '2022-11-28',
   },
+  trees = {},
+  isInit = false,
 }
 M.schema_url = 'https://raw.githubusercontent.com/' .. M.schemas_catalog .. '/' .. M.schema_catalog_branch
 
 M.list_github_tree = function()
-  local url = M.github_base_api_url .. '/' .. M.schemas_catalog .. '/git/trees/' .. M.schema_catalog_branch
-  local response = curl.get(url, { headers = M.github_headers, query = { recursive = 1 } })
-  local body = vim.fn.json_decode(response.body)
-  local trees = {}
-  for _, tree in ipairs(body.tree) do
-    if tree.type == 'blob' and tree.path:match '%.json$' then
-      table.insert(trees, tree.path)
+  if not M.isInit then
+    local url = M.github_base_api_url .. '/' .. M.schemas_catalog .. '/git/trees/' .. M.schema_catalog_branch
+    local response = curl.get(url, { headers = M.github_headers, query = { recursive = 1 } })
+    local body = vim.fn.json_decode(response.body)
+    local trees = {}
+    for _, tree in ipairs(body.tree) do
+      if tree.type == 'blob' and tree.path:match '%.json$' then
+        table.insert(trees, tree.path)
+      end
     end
+    M.trees = trees
+    M.isInit = true
   end
-  return trees
+  return M.trees
 end
 
 M.run = function()
