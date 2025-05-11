@@ -34,4 +34,5 @@ map('v', ';;', '<cmd>norm A;<CR>', { desc = 'Add ; to end of all selected lines'
 
 -- custom script
 -- map('n', '<leader>ck', "<cmd>lua require('tools.yaml-kub').run()<CR>", { desc = 'Open Yaml [C]ode schema for [K]ub selector' })
-map('n', '<leader>ck', "<cmd>lua require('tools.yaml-kub').run_telescope()<CR>", { desc = 'Open Yaml [C]ode schema for [K]ub selector' })
+map('n', '<leader>cK', "<cmd>lua require('tools.yaml-kub').crd.run_telescope()<CR>", { desc = 'Open Yaml [C]ode schema for [K]ub selector' })
+map('n', '<leader>ck', "<cmd>lua require('tools.yaml-kub').k8s.run_telescope()<CR>", { desc = 'Open Yaml [C]ode schema for [K]ub selector' })

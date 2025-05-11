@@ -386,11 +386,13 @@ require('lazy').setup({
         jsonls = {},
         eslint = {},
         cssls = {},
+        tflint = {},
+        terraformls = {},
         ltex = {
           filetypes = { 'tex', 'bib', 'markdown' },
           settings = {
             ltex = {
-              language = 'fr',
+              language = 'en',
             },
           },
         },
@@ -413,6 +415,7 @@ require('lazy').setup({
             yaml = {},
           },
         },
+        helm_ls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
