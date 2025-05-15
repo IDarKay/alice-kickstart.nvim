@@ -227,6 +227,7 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'towolf/vim-helm',
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -410,12 +411,17 @@ require('lazy').setup({
           filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript', 'javascriptreact', 'javascript.js' },
           cmd = { 'typescript-language-server', '--stdio' },
         },
-        yamlls = {
+        helm_ls = {
           settings = {
-            yaml = {},
+            ['helm-ls'] = {
+              yamlls = {
+                settings = {
+                  yaml = {},
+                },
+              },
+            },
           },
         },
-        helm_ls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
