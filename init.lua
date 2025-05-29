@@ -228,6 +228,7 @@ require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       'towolf/vim-helm',
+      'b0o/schemastore.nvim',
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -413,12 +414,17 @@ require('lazy').setup({
         },
         helm_ls = {
           settings = {
-            ['helm-ls'] = {
-              yamlls = {
-                settings = {
-                  yaml = {},
-                },
+            ['helm-ls'] = {},
+          },
+        },
+        yamlls = {
+          settings = {
+            yaml = {
+              schemaStore = {
+                enable = false,
+                uri = '',
               },
+              schemas = require('schemastore').yaml.schemas(),
             },
           },
         },
